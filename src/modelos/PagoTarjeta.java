@@ -22,8 +22,8 @@ public class PagoTarjeta implements MetodoPago {
         return true;
     }
 
-    @Override
-    public String obtenerNombreMetodo() {
+    
+    public String getNombreMetodo() {
         return "Tarjeta (**** " + ultimosCuatro + ")";
     }
 }
