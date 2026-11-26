@@ -13,13 +13,16 @@ public class PagoTransferencia implements MetodoPago {
 
     @Override
     public boolean procesarPago(double monto) {
-        // TODO [Issue #2 - Integrante 2]: Validar monto > 0, imprimir aviso de transferencia y retornar true.
+        if (monto > 0) {
+            System.out.println("Transferencia aprobada por $" + monto + " desde el banco " + banco + " (Cuenta: " + cuenta + ")");
+            return true;
+        }
+        System.out.println("Error: El monto de la transferencia debe ser mayor a 0.");
         return false;
     }
 
     @Override
     public String obtenerNombreMetodo() {
-        // TODO [Issue #2 - Integrante 2]: Retornar un texto con banco y cuenta.
-        return "PENDIENTE_TRANSFERENCIA";
+        return "Transferencia Bancaria - " + banco + " (" + cuenta + ")";
     }
 }
