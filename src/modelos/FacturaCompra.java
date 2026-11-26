@@ -16,13 +16,12 @@ public class FacturaCompra implements Exportable, Persistible {
 
     @Override
     public String exportar() {
-        // TODO [Issue #2 - Integrante 2]: Retornar la factura en formato JSON o texto estructurado.
-        return "PENDIENTE_FACTURA";
+        return "{\"numero\": \"" + numero + "\", \"cliente\": \"" + cliente + "\", \"total\": " + total + "}";
     }
 
     @Override
     public boolean guardar() {
-        // TODO [Issue #2 - Integrante 2]: Imprimir aviso de respaldo de la factura y retornar true.
-        return false;
+        System.out.println("Respaldo exitoso: Factura #" + numero + " del cliente " + cliente + " guardada en el sistema.");
+        return true;
     }
 }
